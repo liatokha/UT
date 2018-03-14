@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="Suite" parallel="false">
-    <test name="SampleTestOne">
+
+    <test name="TriangleSideTest">
+        <classes>
+            <class name="triangle.TriangleSideTest"/>
+
+        </classes>
+    </test>
+
+
+    <test name="TriangleTypeTest">
         <classes>
             <class name="triangle.TriangleTypeTest"/>
 
         </classes>
     </test>
 
+
+    <test name="TriangleAreaTest">
+        <classes>
+            <class name="triangle.TriangleAreaTest"/>
+
+        </classes>
+    </test>
 
 </suite>

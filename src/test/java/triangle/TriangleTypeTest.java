@@ -20,7 +20,7 @@ public class TriangleTypeTest {
     final int TR_ORDYNARY = 4;    // обычный
     final int TR_RECTANGULAR = 8; // прямоугольный
     final int TR_ERROR_TYPE = -1; // ! - не треугольник
-    private Triangle triangle;
+    private Triangle triangle = null;
 
     @DataProvider(name = "simpleDataProvider") public Object[][] createSomeData() {
 // Просто передаём входные данные и ожидаемый результат.
@@ -50,6 +50,7 @@ public class TriangleTypeTest {
                         { 2.0, 2.0, 2.83, TR_RECTANGULAR | TR_ISOSCELES, " 'R_RECTANGULAR | TR_ISOSCELES = 10; прямоугольный и равнобедренный' " },   // прямоугольный и равнобедренный
                         { 7, 7, 9.90,     TR_RECTANGULAR | TR_ISOSCELES, " 'R_RECTANGULAR | TR_ISOSCELES = 10; прямоугольный и равнобедренный' " },    // прямоугольный и равнобедренный
 
+                        // negative testing.
                         { 5, 3, 1, TR_ERROR_TYPE, " c + b < a,  error - NOT triangle" },      // c + b < a   error - not triangle
                         { 1, 5, 3, TR_ERROR_TYPE, " a + c < b,  error - NOT triangle" },      // a + c < b   error - not triangle
                         { 1, 3, 5, TR_ERROR_TYPE, " a + c < b,  error - NOT triangle" }       // a + b < c   error - not triangle
@@ -60,6 +61,6 @@ public class TriangleTypeTest {
     public void TriangleTypeTesting(double a, double b, double c, int expectedTriangleType, String str){
 
         triangle  = new Triangle(a, b, c);
-        Assert.assertEquals(triangle.detectTriangle(), expectedTriangleType, str);
+       Assert.assertEquals(triangle.detectTriangle(), expectedTriangleType, str);
     }
 }
