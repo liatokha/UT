@@ -76,10 +76,9 @@ public class Triangle {
     {
         int final_state = 0;
 
-
         if ((a*a+b*b == c*c) || (b*b + c*c == a*a)||(a*a + c*c == b*c))
         {
-            final_state = final_state|TR_RECTANGULAR; // пр€моугольный
+            final_state = final_state|TR_RECTANGULAR; // прямоугольный
         }
 
 
@@ -99,7 +98,7 @@ public class Triangle {
         }
         else
         {
-            return final_state; // комбинаци€ признаков
+            return final_state; // комбинация признаков
         }
     }
 
